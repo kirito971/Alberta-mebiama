@@ -23,14 +23,22 @@ export default function Header() {
           <ul className="nav-links">
             {links.map((link) => {
               const isPage = link.href === pathname;
+              const isHash = link.href.startsWith("#");
               return (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    aria-current={isPage ? "page" : undefined}
-                  >
-                    {link.label}
-                  </Link>
+                  {isHash ? (
+                    // next/link doesn't reliably scroll to a same-page hash
+                    // (its scroll handling is tuned for page navigation, not
+                    // in-page anchors) — a plain <a> lets the browser do it.
+                    <a href={link.href}>{link.label}</a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      aria-current={isPage ? "page" : undefined}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               );
             })}

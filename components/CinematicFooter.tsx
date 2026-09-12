@@ -4,6 +4,7 @@ import * as React from "react";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { contact, skillTicker } from "@/lib/repertoire";
@@ -133,23 +134,36 @@ export default function CinematicFooter() {
   const giantRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const pillsRef = useRef<HTMLDivElement>(null);
+  // This footer lives in the root layout, so it never unmounts between
+  // pages — only `pathname` changes. Its ScrollTrigger start/end offsets
+  // are measured in pixels against whatever page happened to be mounted
+  // first; a shorter or taller page swapped in above it (client-side, no
+  // reload) leaves those offsets stale, so the reveal can get stuck at
+  // its start state. Re-measuring on every route change fixes that.
+  const pathname = usePathname();
 
   useEffect(() => {
     if (typeof window === "undefined" || !wrapRef.current) return;
 
     const ctx = gsap.context(() => {
+      // `once: true` plays the reveal to completion the moment the wrap
+      // scrolls into view — no `scrub` tying it to live scroll position.
+      // On mobile, the browser chrome (address bar) collapsing mid-scroll
+      // keeps changing 100dvh, which kept nudging the scrubbed progress and
+      // left it stuck at a partial (barely-visible) opacity. A one-shot
+      // reveal finishes regardless of any of that happening afterward.
       gsap.fromTo(
         giantRef.current,
         { y: "8vh", opacity: 0.15 },
         {
           y: "0vh",
           opacity: 1,
+          duration: 1.1,
           ease: "power1.out",
           scrollTrigger: {
             trigger: wrapRef.current,
-            start: "top bottom",
-            end: "top 20%",
-            scrub: 1,
+            start: "top 85%",
+            once: true,
           },
         }
       );
@@ -160,13 +174,13 @@ export default function CinematicFooter() {
         {
           y: 0,
           opacity: 1,
+          duration: 0.9,
           stagger: 0.15,
           ease: "power3.out",
           scrollTrigger: {
             trigger: wrapRef.current,
-            start: "top 70%",
-            end: "top 20%",
-            scrub: 1,
+            start: "top 85%",
+            once: true,
           },
         }
       );
@@ -179,6 +193,15 @@ export default function CinematicFooter() {
       ctx.revert();
     };
   }, []);
+
+  // Re-measure trigger positions against the page that is actually mounted
+  // now — see the note above `pathname`. Runs after every navigation,
+  // including the first, once the new page has had a frame to lay out.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const id = window.setTimeout(() => ScrollTrigger.refresh(), 60);
+    return () => window.clearTimeout(id);
+  }, [pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
