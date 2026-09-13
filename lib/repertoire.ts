@@ -78,13 +78,13 @@ export const demos: Demo[] = [
   {
     id: "grandmeres",
     number: "06",
-    title: "La voix des grands-mères", // PLACEHOLDER — titre proposé, à valider
+    title: "Mamie",
     category: "Doublage — voix de grand-mère, ton chaleureux et malicieux",
     tag: "Animation",
     description:
       "Une grand-mère attachante, un brin espiègle, qui aime raconter ses histoires avec tendresse.", // PLACEHOLDER — à valider
     image: "/images/repertoire/07-grandmeres.png",
-    imageAlt: "Illustration d'une grand-mère souriante, personnage de La voix des grands-mères",
+    imageAlt: "Illustration d'une grand-mère souriante, personnage de Mamie",
     audio: "/audio/07-grandmeres.m4a",
     featured: false,
   },
@@ -221,12 +221,11 @@ export const trustBenefits = [
   },
 ];
 
-// PLACEHOLDER — témoignage entièrement fictif, à remplacer par un vrai avis client.
 export const testimonial = {
   quote:
-    "Alberta a immédiatement compris le ton qu'on cherchait pour notre personnage — espiègle sans être criard. Un vrai gain de temps en direction artistique.",
-  name: "Léa Fontaine",
-  role: "Réalisatrice, Studio Kalima Animation",
+    "Alberta a une facilité déconcertante à changer de registre sans jamais perdre en justesse. Elle comprend vite les intentions, propose des nuances qu'on n'avait pas anticipées, et livre un travail impeccable dans des délais courts. Une collaboratrice sur qui on peut vraiment compter.",
+  name: "Florent Frantz",
+  role: "Formateur en intelligence artificielle",
   rating: 5,
 };
 

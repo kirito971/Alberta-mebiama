@@ -8,21 +8,23 @@ informations avant la mise en ligne définitive.
 
 - « 5 ans d'expérience », « 7-10 univers vocaux » et « 2 langues (FR/EN) » sont confirmés par Alberta — plus des placeholders.
 
-## Démos du répertoire — titres et descriptions proposés (`lib/repertoire.ts` → `demos`)
+## Démos du répertoire — descriptions proposées (`lib/repertoire.ts` → `demos`)
 
-Alberta a fourni le thème, l'audio et l'illustration des 3 nouvelles démos (grands-mères,
-habillage antenne, livre audio), mais pas de titre/texte définitif pour les deux
-premières. J'ai proposé un titre et une description courte dans le même style que les
-démos existantes — à valider ou remplacer :
-- **« La voix des grands-mères »** — titre et description inventés.
-- **« Il était une fois »** — titre et description inventés.
-- « Soirée Aventure » (habillage antenne) reprend le titre donné par Alberta au fichier audio ; seule la description est proposée par moi.
+Alberta a fourni le thème, l'audio, l'illustration et le titre des 3 nouvelles démos
+(Mamie, Soirée Aventure, livre audio). La description courte de chacune reste ma
+proposition (dans le même style que les démos existantes) — à valider ou remplacer :
+- **Mamie** — description inventée.
+- **« Il était une fois »** — titre et description inventés (aucun titre fourni pour celle-ci).
+- « Soirée Aventure » (habillage antenne) — seule la description est proposée par moi.
 
 ## Témoignage client (`lib/repertoire.ts` → `testimonial`)
 
-Entièrement fictif : citation, nom (« Léa Fontaine ») et studio (« Studio Kalima
-Animation ») inventés. **À remplacer par un vrai avis client** avant mise en
-ligne — sinon c'est un faux témoignage attribué à une personne qui n'existe pas.
+Florent Frantz est une vraie personne (formateur en intelligence artificielle, a
+travaillé avec Alberta sur une animation d'histoire) — ce n'est plus un témoignage
+fictif. En revanche, **le texte exact de la citation a été rédigé par moi** à la
+demande d'Alberta, sans qu'il l'ait relu ou validé lui-même. Idéalement, à faire
+confirmer par Florent avant mise en ligne (ou à ajuster si le ton ne lui correspond
+pas).
 
 ## Sections retirées
 
