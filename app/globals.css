@@ -1079,6 +1079,11 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
+  /* `.cap` is a <p>, which carries a browser default bottom margin (~17px)
+     that isn't collapsed away on an absolutely-positioned element — it was
+     pushing the whole scrim up off the true bottom edge, leaving that exact
+     strip of un-darkened image exposed no matter how tall the gradient was. */
+  margin: 0;
   /* Tall enough that the scrim reliably covers the plain floor near the
      bottom of the illustration, not just a thin strip behind the text —
      fades gradually so it reads as a vignette, not a hard-edged bar. */
