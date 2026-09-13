@@ -29,7 +29,7 @@ export const demos: Demo[] = [
     id: "fillette",
     number: "02",
     title: "La fillette espiègle",
-    category: "Doublage — voix de fillette de 12 ans, expression française",
+    category: "Doublage — voix de fillette de 5 ans, expression française",
     tag: "Jeunesse",
     description:
       "Une voix espiègle et pétillante, mignonne et douce dans le timbre. Registre naturel, sans forcer le ton.",
@@ -64,27 +64,54 @@ export const demos: Demo[] = [
     featured: true,
   },
   {
-    id: "radio",
-    number: "05",
-    title: "À l'antenne",
-    category: "Publicité radio — Radio Internationale",
-    tag: "Publicité",
-    description: "Un ton qui capte l'attention en quelques secondes.",
-    image: "/images/repertoire/05-radio.png",
-    imageAlt: "Illustration d'une présentatrice radio, personnage de À l'antenne",
-    audio: "/audio/05-radio.m4a",
-    featured: false,
-  },
-  {
     id: "aeroport",
-    number: "06",
+    number: "05",
     title: "Embarquement immédiat",
     category: "Annonce institutionnelle — aéroport international",
     tag: "Institutionnel",
     description: "Clarté et autorité posée, sans froideur.",
-    image: "/images/repertoire/06-aeroport.png",
+    image: "/images/repertoire/05-aeroport.png",
     imageAlt: "Illustration d'une hôtesse d'aéroport, personnage de Embarquement immédiat",
-    audio: "/audio/06-aeroport.m4a",
+    audio: "/audio/05-aeroport.m4a",
+    featured: false,
+  },
+  {
+    id: "grandmeres",
+    number: "06",
+    title: "La voix des grands-mères", // PLACEHOLDER — titre proposé, à valider
+    category: "Doublage — voix de grand-mère, ton chaleureux et malicieux",
+    tag: "Animation",
+    description:
+      "Une grand-mère attachante, un brin espiègle, qui aime raconter ses histoires avec tendresse.", // PLACEHOLDER — à valider
+    image: "/images/repertoire/07-grandmeres.png",
+    imageAlt: "Illustration d'une grand-mère souriante, personnage de La voix des grands-mères",
+    audio: "/audio/07-grandmeres.m4a",
+    featured: false,
+  },
+  {
+    id: "antenne",
+    number: "07",
+    title: "Soirée Aventure",
+    category: "Habillage antenne — émission thématique",
+    tag: "Publicité",
+    description:
+      "Un ton dynamique et engageant, pensé pour capter l'attention entre deux programmes.", // PLACEHOLDER — à valider
+    image: "/images/repertoire/08-antenne.png",
+    imageAlt: "Illustration d'une présentatrice avec un micro, personnage de Soirée Aventure",
+    audio: "/audio/08-antenne.m4a",
+    featured: false,
+  },
+  {
+    id: "livre-audio",
+    number: "08",
+    title: "Il était une fois", // PLACEHOLDER — titre proposé, à valider
+    category: "Livre audio — narration pour enfants",
+    tag: "Jeunesse",
+    description:
+      "Une narration douce et enveloppante, pensée pour accompagner les tout-petits jusqu'au sommeil.", // PLACEHOLDER — à valider
+    image: "/images/repertoire/09-livre-audio.png",
+    imageAlt: "Illustration d'une jeune femme assise lisant un livre, personnage de Il était une fois",
+    audio: "/audio/09-livre-audio.m4a",
     featured: false,
   },
 ];
@@ -95,13 +122,13 @@ export const featuredDemos = demos.filter((d) => d.featured);
 // See PLACEHOLDERS.md for the full list of invented figures and text.
 
 export const heroStats = [
-  { value: "8 ans", label: "d'expérience" }, // PLACEHOLDER — à remplacer par le vrai chiffre
-  { value: `${demos.length}`, label: "univers vocaux" }, // réel — nombre de démos au répertoire
+  { value: "5 ans", label: "d'expérience" }, // réel — confirmé par Alberta
+  { value: "7-10", label: "univers vocaux" }, // réel — confirmé par Alberta
 ];
 
 export const trustStats = [
   { value: "2", label: "langues (FR/EN)" }, // réel
-  { value: "8 ans", label: "d'expérience" }, // PLACEHOLDER — même chiffre que le hero, à confirmer
+  { value: "5 ans", label: "d'expérience" }, // réel — confirmé par Alberta
 ];
 
 export const skillTicker = [
@@ -148,6 +175,52 @@ export const universes = [
   },
 ];
 
+export const skillsDetail = [
+  {
+    title: "Séries et dessins animés",
+    text: "Enfants, ados, adultes, personnages secondaires ou principaux.",
+  },
+  {
+    title: "Films et longs-métrages d'animation",
+    text: "Héros, méchants, figurants, voix de groupe.",
+  },
+  {
+    title: "Publicités et spots",
+    text: "Radio, TV, web, réseaux sociaux (spots courts, accroches, slogans).",
+  },
+  {
+    title: "Documentaires et vidéos éducatives",
+    text: "Narration, voix off explicative, contenus culturels ou scientifiques.",
+  },
+  {
+    title: "Voix d'animaux et de créatures",
+    text: "Animation, pub, jeux, contenus jeunesse.",
+  },
+  {
+    title: "Accents et variantes linguistiques",
+    text: "Accents africains et internationaux pour personnages, pubs, documentaires, contenus corporate, etc.",
+  },
+];
+
+export const trustBenefits = [
+  {
+    title: "Un casting simplifié",
+    text: "Une seule voix pour plusieurs personnages et besoins dans le même projet.",
+  },
+  {
+    title: "Une grande polyvalence",
+    text: "Différentes tranches d'âge, intentions (sérieux, dynamique, humoristique, etc.) et accents.",
+  },
+  {
+    title: "Une approche pro",
+    text: "Habitude des contraintes du doublage, écoute des directions artistiques, prises et ajustements rapides.",
+  },
+  {
+    title: "Des livrables prêts à l'emploi",
+    text: "Enregistrement en studio pro, fichiers propres (WAV/MP3) directement utilisables en post-prod.",
+  },
+];
+
 // PLACEHOLDER — témoignage entièrement fictif, à remplacer par un vrai avis client.
 export const testimonial = {
   quote:
@@ -171,7 +244,5 @@ export const contact = {
   email: "mebiamaalberta@gmail.com",
   whatsappDisplay: "+212 723-192689",
   whatsappHref: "https://wa.me/212723192689",
-  instagramHandle: "@alberta_mebiama",
-  instagramHref: "https://www.instagram.com/alberta_mebiama/",
   location: "Maroc",
 };

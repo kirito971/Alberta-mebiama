@@ -666,6 +666,36 @@ section {
   transform: scale(1.1) rotate(8deg);
 }
 
+.skills-detail-grid {
+  list-style: none;
+  margin: 56px 0 0;
+  padding: 40px 0 0;
+  border-top: 1px solid rgba(247, 242, 230, 0.12);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px 32px;
+}
+
+.skills-detail-grid li {
+  padding-left: 18px;
+  border-left: 2px solid var(--accent);
+}
+
+.skills-detail-grid h3 {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--cream);
+  margin: 0 0 6px;
+}
+
+.skills-detail-grid p {
+  font-size: 14.5px;
+  color: var(--cream-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* ---- trust / why-choose section ---- */
 .trust-grid {
   display: grid;
@@ -721,6 +751,55 @@ section {
   font-family: var(--font-ui);
   font-size: 13.5px;
   color: var(--ink-soft);
+}
+
+.trust-grid .lede {
+  margin-top: 16px;
+}
+
+.trust-lead-in {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 20px 0 0;
+}
+
+.trust-benefits {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trust-benefits li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.trust-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.trust-benefits li strong {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .trust-benefits li {
+    text-align: left;
+  }
 }
 
 /* ---- testimonial ---- */

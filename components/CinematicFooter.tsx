@@ -254,19 +254,6 @@ export default function CinematicFooter() {
             </div>
 
             <div className="cine-pills-row cine-pills-row-secondary">
-              <Magnetic
-                href={contact.instagramHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/images/icons/instagram.png"
-                  alt=""
-                  width={16}
-                  height={16}
-                />
-                Instagram
-              </Magnetic>
               <Link href="/repertoire" className="cine-pill">
                 Voir le répertoire →
               </Link>

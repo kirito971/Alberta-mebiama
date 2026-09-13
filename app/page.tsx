@@ -11,7 +11,9 @@ import {
   heroStats,
   skillTicker,
   universes,
+  skillsDetail,
   trustStats,
+  trustBenefits,
   testimonial,
 } from "@/lib/repertoire";
 
@@ -39,11 +41,13 @@ export default function HomePage() {
             <p className="hero-role">Comédienne de doublage &amp; voix off</p>
             <HeroTagline lines={heroLines} />
             <p className="lede">
-              Comédienne de doublage et voix off, en français et en anglais.
-              Trois extraits pour donner le ton : une voix d&rsquo;enfant
-              espiègle, un conte animé à plusieurs personnages, une publicité
-              pleine d&rsquo;énergie. Le répertoire complet — six univers,
-              deux langues — se trouve juste à côté.
+              Comédienne de doublage professionnel : 5 ans d&rsquo;expérience,
+              une dizaine d&rsquo;univers vocaux (enfance, adultes, seniors,
+              institutionnel, fiction, pub, docu, animaux) et plus de 20 voix
+              différentes. Trois extraits pour donner le ton : une voix
+              d&rsquo;enfant espiègle, un conte animé à plusieurs personnages,
+              une publicité pleine d&rsquo;énergie. Le répertoire complet —
+              sept à dix univers, deux langues — se trouve juste à côté.
             </p>
             <div className="hero-ctas">
               <Link className="btn" href="/repertoire">
@@ -80,6 +84,14 @@ export default function HomePage() {
               <UniverseCard key={u.id} data={u} />
             ))}
           </div>
+          <ul className="skills-detail-grid">
+            {skillsDetail.map((item) => (
+              <li key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -88,9 +100,25 @@ export default function HomePage() {
           <div>
             <h2>Pourquoi me choisir</h2>
             <p className="lede" style={{ marginTop: 12 }}>
-              Un registre naturel, une direction artistique à l&rsquo;écoute,
-              et une voix capable de passer d&rsquo;un enfant espiègle à une
-              annonce institutionnelle sans perdre en justesse.
+              Comédienne de doublage professionnel depuis 5 ans, je maîtrise
+              une dizaine d&rsquo;univers vocaux : enfants et ados, jeunes
+              adultes, adultes, seniors, voix institutionnelles, fiction
+              (séries, animation, jeux), publicité, documentaire, ainsi que
+              des voix d&rsquo;animaux et de créatures, et plusieurs accents
+              africains et internationaux.
+            </p>
+            <p className="trust-lead-in">Concrètement, tu gagnes :</p>
+            <ul className="trust-benefits">
+              {trustBenefits.map((item) => (
+                <li key={item.title}>
+                  <strong>{item.title}</strong> : {item.text}
+                </li>
+              ))}
+            </ul>
+            <p className="lede">
+              Si ton projet a besoin de polyvalence, de fiabilité et
+              d&rsquo;une vraie palette de jeux, je suis la voix qu&rsquo;il te
+              faut.
             </p>
           </div>
           <div className="trust-visual">

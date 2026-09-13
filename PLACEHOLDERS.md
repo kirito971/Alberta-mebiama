@@ -6,8 +6,17 @@ informations avant la mise en ligne définitive.
 
 ## Chiffres
 
-- **« 8 ans d'expérience »** — hero + section « Pourquoi me choisir » (`lib/repertoire.ts` → `heroStats`, `trustStats`). À remplacer par le vrai nombre d'années.
-- « 2 langues (FR/EN) » et « 6 univers vocaux » sont réels (déduits du répertoire), pas des placeholders.
+- « 5 ans d'expérience », « 7-10 univers vocaux » et « 2 langues (FR/EN) » sont confirmés par Alberta — plus des placeholders.
+
+## Démos du répertoire — titres et descriptions proposés (`lib/repertoire.ts` → `demos`)
+
+Alberta a fourni le thème, l'audio et l'illustration des 3 nouvelles démos (grands-mères,
+habillage antenne, livre audio), mais pas de titre/texte définitif pour les deux
+premières. J'ai proposé un titre et une description courte dans le même style que les
+démos existantes — à valider ou remplacer :
+- **« La voix des grands-mères »** — titre et description inventés.
+- **« Il était une fois »** — titre et description inventés.
+- « Soirée Aventure » (habillage antenne) reprend le titre donné par Alberta au fichier audio ; seule la description est proposée par moi.
 
 ## Témoignage client (`lib/repertoire.ts` → `testimonial`)
 
