@@ -125,6 +125,7 @@ export default function HomePage() {
             <div className="plasma-orb">
               <PlasmaRing
                 background="transparent"
+                glow={false}
                 scale={22}
                 density={110}
                 speed={70}

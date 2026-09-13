@@ -236,6 +236,9 @@ const CAM_PER_SCALE = 15
 
 interface Props {
     background?: string
+    /** Soft radial color blooms framing the sphere. Default true; set false
+        for a plain cutout with no halo around the animation. */
+    glow?: boolean
 
     colors?: string[]
     density?: number
@@ -258,6 +261,7 @@ interface Props {
 export default function PlasmaRing(props: Props) {
     const {
         background = "#241f1a", // --espresso, matches the site's dark-panel tone
+        glow = true,
         colors = ["#F0C8AB", "#C97C54", "#8F4E30"],
         density = 120,
         speed = 100,
@@ -642,6 +646,9 @@ export default function PlasmaRing(props: Props) {
     const stops = colors?.length ? colors : DEFAULT_COLORS
     const topGlow = stops[0] + "28"
     const botGlow = stops[stops.length - 1] + "28"
+    const hostBackground = glow
+        ? `radial-gradient(55% 40% at 68% 6%, ${topGlow} 0%, transparent 72%), radial-gradient(50% 38% at 25% 94%, ${botGlow} 0%, transparent 70%), ${background}`
+        : background
 
     return (
         <div
@@ -653,7 +660,7 @@ export default function PlasmaRing(props: Props) {
                 height:    "100%",
                 position:  "relative",
                 overflow:  "hidden",
-                background: `radial-gradient(55% 40% at 68% 6%, ${topGlow} 0%, transparent 72%), radial-gradient(50% 38% at 25% 94%, ${botGlow} 0%, transparent 70%), ${background}`,
+                background: hostBackground,
                 cursor: "grab",
                 ...style,
             }}
